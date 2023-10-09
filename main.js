@@ -98,28 +98,36 @@ function sortByPrice() {
 
 
 
-
-$(".image").click(function () {
-  var id = this.id;
+ // Function to toggle the image
+function toggleImage() {
   var $image = $(this);
   var originalSrc = $image.data("src");
   var altSrc = $image.data("alt");
 
   if ($image.attr("src") === originalSrc) {
-      $image.attr("src", altSrc);
-      $image.attr("alt", originalSrc);
+    $image.attr("src", altSrc);
+    $image.attr("alt", originalSrc);
   } else {
-      $image.attr("src", originalSrc);
-      $image.attr("alt", altSrc);
+    $image.attr("src", originalSrc);
+    $image.attr("alt", altSrc);
   }
-});
+}
 
-$("#submit").on("click", function () {
-  var value = $("#SB").val();
+
+$("#library").on("click", ".image", toggleImage);
+
+$("#submit").on("click", function (e) {
+  e.preventDefault(); 
+  
+  var value = $("#SB").val().toLowerCase();
 
   var filtered = kkLib.list.filter(function (book) {
-    return book.title.toLowerCase().includes(value.toLowerCase())||book.author.toLowerCase().includes(value.toLowerCase())||book.genre.toLowerCase().includes(value.toLowerCase());
+    return (
+      book.title.toLowerCase().includes(value) ||book.author.toLowerCase().includes(value) || book.genre.toLowerCase().includes(value)
+    );
   });
+
+  // Clear and update the library
   $("#library").empty();
   filtered.forEach(function (book) {
     display(book);
@@ -127,16 +135,21 @@ $("#submit").on("click", function () {
 });
 
 
-// $("select").on("change", function () {
-//   var value = $(this).val();
-//   console.log(value);
-//   var filtered = kkLib.list.filter(function (item) {
-//     return item.category === value;
-//   });
-//   $("#shop").empty();
-//   filtered.forEach(function (item) {
-//     display(item);
-//   });
-// });
+
+
+
+
+
+
+$("select").on("change", function () {
+  var value = $(this).val();
+  var filtered = kkLib.list.filter(function (item) {
+    return item.category === value;
+  });
+  $("#shop").empty();
+  filtered.forEach(function (item) {
+    display(item);
+  });
+});
 
 
