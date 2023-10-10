@@ -141,15 +141,6 @@ $("#submit").on("click", function (e) {
 
 
 
-$("select").on("change", function () {
-  var value = $(this).val();
-  var filtered = kkLib.list.filter(function (item) {
-    return item.category === value;
-  });
-  $("#shop").empty();
-  filtered.forEach(function (item) {
-    display(item);
-  });
-});
+
 
 

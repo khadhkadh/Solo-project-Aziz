@@ -1,24 +1,106 @@
-  .title {
-    font-family:'Times New Roman', Times, serif ;
-    color: rgb(72, 47, 16);
+  
+  body{
+    background-color: wheat;
+  }
+  #searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
   
-  .select {
-    padding: 5px;
+ 
+  #SB {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px;
   }
-  #select {
-    height: 30px;
-    width: 80px;
+  
+  
+  #submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
+  
+ 
+  #submit:hover {
+    background-color: #0056b3;
+  }
+  #price {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #88ba94; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #price:hover {
+    background-color: #6b9c75; 
+  }
+  
   .image{
-    width: 40% ;
+    width: 20% ;
 }
 
-.title{
-    text-decoration: underline;
-    color:rgb(99, 20, 20)
-}
 
 .checked {
     color: orange;
+  }
+  .book {
+    border: 1px solid #ff6600; 
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(213, 177, 109); 
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  }
+  .image:hover { 
+    transform: scale(1.05);
+  }
+  .title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #5b1c1c;
+    text-decoration: underline;
+    text-align: center;
+  }
+  .author {
+    font-size: 17px;
+    color: #666;
+  }
+  .genre {
+    font-size: 16px;
+    
+    font-weight: bold;
+  }
+  .description {
+    font-size: 16px;
+    color: #444;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .price {
+    font-size: 16px;
+    color: #ff6600;
+    font-weight: bold;
+  }
+  .fa-star {
+    color: orange;
+    font-size: 16px;
+    margin-right: 2px;
+  }
+  #title1{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
   }
